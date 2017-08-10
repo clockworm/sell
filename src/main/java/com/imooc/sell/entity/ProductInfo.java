@@ -1,6 +1,7 @@
 package com.imooc.sell.entity;
 
 import lombok.Data;
+import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
@@ -15,6 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "product_info")
 @DynamicUpdate
 @Data
+@ToString
 public class ProductInfo {
     @Id
     private String productId;
