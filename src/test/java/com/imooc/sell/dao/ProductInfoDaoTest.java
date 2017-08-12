@@ -4,9 +4,12 @@ import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.entity.ProductCategory;
 import com.imooc.sell.entity.ProductInfo;
 import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -15,8 +18,9 @@ import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Log
 public class ProductInfoDaoTest {
+
+    private Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired
     ProductInfoDao productInfoDao;

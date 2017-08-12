@@ -1,21 +1,20 @@
 package com.imooc.sell.dao;
 
 import com.imooc.sell.entity.ProductCategory;
-import lombok.extern.java.Log;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Log
 public class ProductCategoryDaoTest {
+
+    private Logger log = LoggerFactory.getLogger(getClass());
 
     @Autowired
     ProductCategoryDao productCategoryDao;
@@ -23,7 +22,7 @@ public class ProductCategoryDaoTest {
     @Test
     public void findProductCategoryByCategoryTypeEquals() throws Exception {
         ProductCategory productCategory = productCategoryDao.findProductCategoryByCategoryTypeEquals(1);
-        log.info("对象:" + productCategory);
+        log.info("{}",productCategory);
         Assert.assertNotNull(productCategory);
     }
 
