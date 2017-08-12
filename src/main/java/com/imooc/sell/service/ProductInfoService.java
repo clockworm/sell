@@ -13,4 +13,6 @@ public interface ProductInfoService extends BaseService<ProductInfo> {
     List<ProductInfo> findProductInfoByProductStatus(CategoryStatusEnum statusEnum);
 
     List<ProductInfo> findProductInfoByCategoryType(Integer categoryType);
+
+    //加減庫存
 }
