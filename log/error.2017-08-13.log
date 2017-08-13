@@ -103,3 +103,5 @@ Caused by: java.io.EOFException: Can not read response from server. Expected to 
 	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
 	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3469)
 	... 90 common frames omitted
+2017-08-13 12:44:09.262 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Incorrect string value: '\xE8\xA5\xBF\xE7\x93\x9C' for column 'product_name' at row 1
+2017-08-13 12:44:40.605 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Incorrect string value: '\xE8\xA5\xBF\xE7\x93\x9C' for column 'product_name' at row 1

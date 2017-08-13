@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ProductCategoryService extends BaseService<ProductCategory> {
 
-    ProductCategory findProductCategoryByCategoryTypeEquals(Integer categoryType);
+    List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryType);
 
 }

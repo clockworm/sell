@@ -1,8 +1,8 @@
 package com.imooc.sell.dao;
 
-import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.entity.ProductCategory;
 import com.imooc.sell.entity.ProductInfo;
+import com.imooc.sell.enums.CategoryStatusEnum;
 import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;

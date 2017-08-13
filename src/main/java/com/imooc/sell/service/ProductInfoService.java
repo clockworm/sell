@@ -1,7 +1,7 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.entity.ProductInfo;
+import com.imooc.sell.enums.CategoryStatusEnum;
 
 import java.util.List;
 

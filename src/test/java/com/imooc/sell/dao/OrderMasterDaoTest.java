@@ -11,6 +11,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
@@ -59,6 +62,15 @@ public class OrderMasterDaoTest {
         for (OrderMaster orderMaster : list){
             System.err.println(orderMaster.toString());
         }
+    }
+
+    @Test
+    public void findByBuyerOpenid(){
+        String openId = "987456321";
+        PageRequest pageRequest = new PageRequest(0, 10);
+        Page<OrderMaster> orderMasters = orderMasterDao.findByBuyerOpenid(openId, pageRequest);
+        Assert.assertNotEquals(0,orderMasters.getContent().size());
+
     }
 
 }

@@ -1,8 +1,8 @@
 package com.imooc.sell.service.impl;
 
-import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.dao.ProductInfoDao;
 import com.imooc.sell.entity.ProductInfo;
+import com.imooc.sell.enums.CategoryStatusEnum;
 import com.imooc.sell.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

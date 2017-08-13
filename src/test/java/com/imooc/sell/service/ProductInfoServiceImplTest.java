@@ -1,9 +1,7 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.entity.ProductInfo;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
+import com.imooc.sell.enums.CategoryStatusEnum;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotEquals;
 
 
 @RunWith(SpringRunner.class)
@@ -28,7 +26,7 @@ public class ProductInfoServiceImplTest {
 
     @Test
     public void findProductInfoByProductStatus() throws Exception {
-        List<ProductInfo> list = productInfoService.findProductInfoByProductStatus(CategoryStatusEnum.UP);
+        List<ProductInfo> list = productInfoService.findProductInfoByProductStatus(CategoryStatusEnum.DOWN);
         Assert.assertNotEquals(0,list.size());
     }
 
@@ -42,7 +40,7 @@ public class ProductInfoServiceImplTest {
     public void saveOrUpdate() throws Exception {
         ProductInfo productInfo = new ProductInfo();
         productInfo.setProductId("2");
-        productInfo.setCategoryType(1);
+        productInfo.setCategoryType(2);
         productInfo.setProductDescription("i am go to s");
         productInfo.setProductIcon("/u/c.jpg");
         productInfo.setProductName("coke2");

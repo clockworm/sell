@@ -17,7 +17,6 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Autowired
     private ProductCategoryDao productCategoryDao;
 
-    @Override
     public ProductCategory findProductCategoryByCategoryTypeEquals(Integer categoryType) {
         return productCategoryDao.findProductCategoryByCategoryTypeEquals(categoryType);
     }
@@ -45,5 +44,10 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     public Page<ProductCategory> findByPage(Pageable page) {
         return productCategoryDao.findAll(page);
+    }
+
+    @Override
+    public List<ProductCategory> findByCategoryTypeIn(List<Integer> categoryType) {
+        return productCategoryDao.findByCategoryTypeIn(categoryType);
     }
 }

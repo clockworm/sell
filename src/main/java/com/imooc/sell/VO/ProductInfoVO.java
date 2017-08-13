@@ -16,9 +16,9 @@ public class ProductInfoVO {
     @JsonProperty("id")
     private String productId;
     @JsonProperty("name")
-    private BigDecimal productName;
+    private String productName;
     @JsonProperty("price")
-    private Integer productPrice;
+    private BigDecimal productPrice;
     @JsonProperty("description")
     private String productDescription;
     @JsonProperty("icon")
