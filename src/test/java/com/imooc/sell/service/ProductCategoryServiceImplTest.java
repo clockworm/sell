@@ -1,10 +1,6 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.entity.ProductCategory;
-import com.imooc.sell.entity.ProductInfo;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,8 +11,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

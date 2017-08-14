@@ -1,6 +1,5 @@
 package com.imooc.sell.service.impl;
 
-import com.imooc.sell.Enum.CategoryStatusEnum;
 import com.imooc.sell.dao.ProductCategoryDao;
 import com.imooc.sell.entity.ProductCategory;
 import com.imooc.sell.service.ProductCategoryService;
