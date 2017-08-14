@@ -1,8 +1,6 @@
 package com.imooc.sell.service;
 
 import com.imooc.sell.entity.OrderMaster;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,14 +13,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class OrderMasterServiceImplTest {
 
     @Autowired
-    OrderMasterService orderMasterService;
+    OrderService orderMasterService;
 
     @Test
     public void findOrderMastersByBuyerNameLike() throws Exception {
