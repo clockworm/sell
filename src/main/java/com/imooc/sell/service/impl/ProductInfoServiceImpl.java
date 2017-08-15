@@ -1,13 +1,17 @@
 package com.imooc.sell.service.impl;
 
 import com.imooc.sell.dao.ProductInfoDao;
+import com.imooc.sell.dto.CartDTO;
 import com.imooc.sell.entity.ProductInfo;
 import com.imooc.sell.enums.CategoryStatusEnum;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
 import com.imooc.sell.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -25,6 +29,28 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     @Override
     public List<ProductInfo> findProductInfoByCategoryType(Integer categoryType) {
         return productInfoDao.findProductInfoByCategoryType(categoryType);
+    }
+
+    @Override
+    public void increaseStock(List<CartDTO> cartDTOList) {
+
+    }
+
+    @Override
+    @Transactional
+    public void decreaseStock(List<CartDTO> cartDTOList) {
+        for (CartDTO cartDTO:cartDTOList) {
+            ProductInfo productInfo = productInfoDao.findOne(cartDTO.getProductId());
+            if (productInfo == null){
+                throw  new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            Integer count = productInfo.getProductStock() - cartDTO.getProductQuantity();
+            if (count < 0) {
+                throw  new SellException(ResultEnum.PRODUCT_STOCK_ERROR);
+            }
+            productInfo.setProductStock(count);
+            productInfoDao.save(productInfo);
+        }
     }
 
     @Override
