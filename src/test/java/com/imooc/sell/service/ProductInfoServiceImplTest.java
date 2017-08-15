@@ -26,7 +26,7 @@ public class ProductInfoServiceImplTest {
 
     @Test
     public void findProductInfoByProductStatus() throws Exception {
-        List<ProductInfo> list = productInfoService.findProductInfoByProductStatus(CategoryStatusEnum.DOWN);
+        List<ProductInfo> list = productInfoService.findProductInfoByProductStatus(CategoryStatusEnum.UP);
         Assert.assertNotEquals(0,list.size());
     }
 
