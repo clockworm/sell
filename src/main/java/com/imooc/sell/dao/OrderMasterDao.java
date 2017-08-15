@@ -16,7 +16,7 @@ public interface OrderMasterDao  extends JpaRepository<OrderMaster,String>{
 
     @Query("select m from OrderMaster m where m.buyerName like %:buyerName%")
     List<OrderMaster> findOrderMastersByBuyerNameLike(@Param("buyerName") String buyerName);
-
+    @Query("select m from OrderMaster m where m.buyerName like %?1%")
     List<OrderMaster> findOrderMastersByBuyerPhoneEquals(String buyerPhone);
 
     Page<OrderMaster> findByBuyerOpenid(String openId, Pageable pageable);

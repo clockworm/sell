@@ -76,7 +76,27 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderDTO findOne(String orderId) {
+    public OrderMaster saveOrUpdate(OrderMaster orderMaster) {
+        return null;
+    }
+
+    @Override
+    public OrderMaster delete(String id) {
+        return null;
+    }
+
+    @Override
+    public OrderMaster findOne(String orderId) {
+        return null;
+    }
+
+    @Override
+    public List<OrderMaster> findAll() {
+        return null;
+    }
+
+    @Override
+    public Page<OrderMaster> findByPage(Pageable page) {
         return null;
     }
 
@@ -97,6 +117,16 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public OrderDTO paid(OrderDTO orderDTO) {
+        return null;
+    }
+
+    @Override
+    public List<OrderMaster> findOrderMastersByBuyerNameLike(String tang) {
+        return null;
+    }
+
+    @Override
+    public List<OrderMaster> findOrderMastersByBuyerPhoneEquals(String s) {
         return null;
     }
 }
