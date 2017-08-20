@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://45.76.96.117:3306/dry?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://45.76.106.123:3306/dry?characterEncoding=utf8&useSSL=false
     username: cheer
-    password: tang0624
+    password: cheerrrr
   jpa:
     show-sql: true
 server:

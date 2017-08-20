@@ -1,5 +1,7 @@
 package com.imooc.sell.service;
 
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.entity.OrderMaster;
 import org.junit.Assert;
 import org.junit.Test;
@@ -11,6 +13,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -69,6 +72,23 @@ public class OrderMasterServiceImplTest {
         PageRequest pageRequest = new PageRequest(0, 10);
         Page<OrderMaster> page = orderMasterService.findByPage(pageRequest);
         Assert.assertNotEquals(0,page.getContent().size());
+    }
+
+    @Test
+    public void create() throws Exception {
+        OrderDTO orderDTO = new OrderDTO();
+        orderDTO.setBuyerName("唐嶺雲");
+        orderDTO.setBuyerPhone("17783253569");
+        orderDTO.setBuyerAddress("重慶市");
+        orderDTO.setBuyerOpenid("987654321");
+        ArrayList<OrderDetail> list = new ArrayList<>();
+        OrderDetail detail = new OrderDetail();
+        detail.setProductId("2");
+        detail.setProductQuantity(1);
+        list.add(detail);
+        orderDTO.setDetailList(list);
+        OrderDTO dto = orderMasterService.create(orderDTO);
+        System.err.println(dto.toString());
     }
 
 }

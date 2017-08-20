@@ -32,8 +32,17 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     }
 
     @Override
+    @Transactional
     public void increaseStock(List<CartDTO> cartDTOList) {
-
+        for (CartDTO cartDTO:cartDTOList) {
+            ProductInfo productInfo = productInfoDao.findOne(cartDTO.getProductId());
+            if (productInfo == null){
+                throw  new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            Integer count = productInfo.getProductStock() + cartDTO.getProductQuantity();
+            productInfo.setProductStock(count);
+            productInfoDao.save(productInfo);
+        }
     }
 
     @Override

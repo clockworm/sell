@@ -15,6 +15,7 @@ import com.imooc.sell.util.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -54,7 +55,7 @@ public class OrderServiceImpl implements OrderService {
                 throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
             }
             //(数量  价格 计算訂單总价)
-            orderAmount  = orderDetail.getProductPrice().multiply(new BigDecimal(orderDetail.getProductQuantity())).add(orderAmount);
+            orderAmount  = productInfo.getProductPrice().multiply(new BigDecimal(orderDetail.getProductQuantity())).add(orderAmount);
             //写入订单数据库（OrderMaster ）
             orderDetail.setOrderId(orderId);
             orderDetail.setDetailId(KeyUtil.genUniqueKey());
@@ -65,7 +66,7 @@ public class OrderServiceImpl implements OrderService {
         OrderMaster orderMaster = new OrderMaster();
         orderMaster.setOrderId(orderId);
         orderMaster.setOrderAmount(orderAmount);
-        BeanUtils.copyProperties(orderDTO,orderMaster);
+        BeanUtils.copyProperties(orderDTO,orderMaster,"orderId","orderAmount","orderStatus","payStatus");
         orderMasterDao.save(orderMaster);
         //扣库存
         List<CartDTO> cartDTOS = detailList.stream().map(

@@ -4,12 +4,15 @@ import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.enums.OrderStatusEnum;
 import com.imooc.sell.enums.PayStatusEnum;
 import lombok.Data;
+import lombok.ToString;
+
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 @Data
+@ToString
 public class OrderDTO {
     /** 订单ID*/
     @Id
