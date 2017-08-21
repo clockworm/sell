@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface OrderService extends BaseService<OrderMaster>{
+public interface OrderService extends BaseService<OrderDTO>{
 
     /**创建订单*/
     OrderDTO create(OrderDTO orderDTO);
@@ -22,7 +22,7 @@ public interface OrderService extends BaseService<OrderMaster>{
     /**支付订单*/
     OrderDTO paid(OrderDTO orderDTO);
 
-    List<OrderMaster> findOrderMastersByBuyerNameLike(String tang);
+    List<OrderDTO> findOrderMastersByBuyerNameLike(String tang);
 
-    List<OrderMaster> findOrderMastersByBuyerPhoneEquals(String s);
+    List<OrderDTO> findOrderMastersByBuyerPhoneEquals(String s);
 }

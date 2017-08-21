@@ -3,6 +3,7 @@ package com.imooc.sell.service;
 import com.imooc.sell.dto.OrderDTO;
 import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.entity.OrderMaster;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,26 +19,29 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Slf4j
 public class OrderMasterServiceImplTest {
 
     @Autowired
     OrderService orderMasterService;
 
+    final String orderId = "1503247869720776908";
+
     @Test
     public void findOrderMastersByBuyerNameLike() throws Exception {
-        List<OrderMaster> list = orderMasterService.findOrderMastersByBuyerNameLike("tang");
+        List<OrderDTO> list = orderMasterService.findOrderMastersByBuyerNameLike("tang");
         Assert.assertNotEquals(0,list.size());
     }
 
     @Test
     public void findOrderMastersByBuyerPhoneEquals() throws Exception {
-        List<OrderMaster> list = orderMasterService.findOrderMastersByBuyerPhoneEquals("17783253569");
+        List<OrderDTO> list = orderMasterService.findOrderMastersByBuyerPhoneEquals("17783253569");
         Assert.assertNotEquals(0,list.size());
     }
 
     @Test
     public void saveOrUpdate() throws Exception {
-        OrderMaster master = new OrderMaster();
+        OrderDTO master = new OrderDTO();
         master.setOrderId("3");
         master.setBuyerName("tangbiao");
         master.setBuyerPhone("13036353072");
@@ -51,26 +55,30 @@ public class OrderMasterServiceImplTest {
     }
 
     @Test
-    public void delete() throws Exception {
-
+    public void findList() throws Exception {
+        PageRequest pageRequest = new PageRequest(0, 2);
+        Page<OrderDTO> list = orderMasterService.findList("987654321", pageRequest);
+        log.info("{}",list.getContent());
+        Assert.assertNotEquals(0,list.getTotalElements());
     }
 
     @Test
     public void findOne() throws Exception {
-        OrderMaster orderMaster = orderMasterService.findOne("3");
+        OrderDTO orderMaster = orderMasterService.findOne("1503247869720776908");
+        log.info("单个订单详情列表:{}",orderMaster);
         Assert.assertNotNull(orderMaster);
     }
 
     @Test
     public void findAll() throws Exception {
-        List<OrderMaster> list = orderMasterService.findAll();
+        List<OrderDTO> list = orderMasterService.findAll();
         Assert.assertNotEquals(0,list.size());
     }
 
     @Test
     public void findByPage() throws Exception {
         PageRequest pageRequest = new PageRequest(0, 10);
-        Page<OrderMaster> page = orderMasterService.findByPage(pageRequest);
+        Page<OrderDTO> page = orderMasterService.findByPage(pageRequest);
         Assert.assertNotEquals(0,page.getContent().size());
     }
 
@@ -89,6 +97,27 @@ public class OrderMasterServiceImplTest {
         orderDTO.setDetailList(list);
         OrderDTO dto = orderMasterService.create(orderDTO);
         System.err.println(dto.toString());
+    }
+
+    @Test
+    public void cancel(){
+        OrderDTO orderDTO = orderMasterService.findOne(orderId);
+        OrderDTO cancel = orderMasterService.cancel(orderDTO);
+        System.err.println(cancel);
+    }
+
+    @Test
+    public void finished(){
+        OrderDTO orderDTO = orderMasterService.findOne("15032478697207769081");
+        OrderDTO cancel = orderMasterService.finish(orderDTO);
+        System.err.println(cancel);
+    }
+
+    @Test
+    public void paid(){
+        OrderDTO orderDTO = orderMasterService.findOne("15032478697207769081");
+        OrderDTO cancel = orderMasterService.paid(orderDTO);
+        System.err.println(cancel);
     }
 
 }
