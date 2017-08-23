@@ -1,5 +1,8 @@
 package com.imooc.sell.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.imooc.sell.converter.Date2LongSerializer;
 import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.enums.OrderStatusEnum;
 import com.imooc.sell.enums.PayStatusEnum;
@@ -13,6 +16,7 @@ import java.util.List;
 
 @Data
 @ToString
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
     /** 订单ID*/
     @Id
@@ -32,8 +36,10 @@ public class OrderDTO {
     /** 支付状态 0 等待支付 1 支付完成*/
     private Integer payStatus;
     /** 订单创建时间*/
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date createTime;
     /** 更新时间*/
+    @JsonSerialize(using = Date2LongSerializer.class)
     private Date updateTime;
     /** 訂單詳情*/
     private List<OrderDetail> detailList;
