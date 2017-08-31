@@ -10,3 +10,10 @@ spring:
     default-property-inclusion: non_null
 server:
   context-path: /sell
+
+wechat:
+ mpAppId: wxd898fcb01713c658
+ mchId: 1483469312
+ mchKey: C5245D70627C1F8E9964D494B0735025
+ keyPath: E:/dev/sell-master/sell/weixin_cert/h5.p12
+ notifyUrl: http://sell.mynatapp.cc/sell/notify
