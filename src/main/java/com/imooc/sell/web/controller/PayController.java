@@ -38,7 +38,7 @@ public class PayController {
         request.setOpenid(openid);
         request.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);
         request.setOrderId(KeyUtil.genUniqueKey());
-        request.setOrderAmount(0.01d);
+        request.setOrderAmount(0.01);
         request.setOrderName("最好的支付");
         log.info("[发起支付] request={}", JsonUtil.toJson(request));
 
