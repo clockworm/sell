@@ -1,13 +1,11 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.dto.OrderDTO;
-import com.imooc.sell.entity.OrderMaster;
-import org.hibernate.criterion.Order;
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
+import com.imooc.sell.dto.OrderDTO;
 
 public interface OrderService extends BaseService<OrderDTO>{
 

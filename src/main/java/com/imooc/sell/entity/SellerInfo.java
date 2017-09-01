@@ -1,12 +1,13 @@
 package com.imooc.sell.entity;
 
-import lombok.Data;
-import lombok.ToString;
-import org.hibernate.annotations.DynamicUpdate;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.DynamicUpdate;
+
+import lombok.Data;
+import lombok.ToString;
 
 /**
  * 买家

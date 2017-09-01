@@ -1,8 +1,7 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.entity.SellerInfo;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
+import com.imooc.sell.entity.SellerInfo;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -39,7 +35,7 @@ public class SellerInfoServiceImplTest {
     public void saveOrUpdate() throws Exception {
         SellerInfo info = new SellerInfo();
         info.setId("2");
-        info.setUsername("tangbiao");
+        info.setUsername("tanglingyun");
         info.setPassword("123456");
         info.setOpenid("987654321");
         info = sellerInfoService.saveOrUpdate(info);

@@ -1,10 +1,11 @@
 package com.imooc.sell.config;
 
-import com.lly835.bestpay.config.WxPayH5Config;
-import com.lly835.bestpay.service.impl.BestPayServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import com.lly835.bestpay.config.WxPayH5Config;
+import com.lly835.bestpay.service.impl.BestPayServiceImpl;
 
 @Component
 public class PayConfig {

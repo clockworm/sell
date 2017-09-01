@@ -1,14 +1,15 @@
 package com.imooc.sell.service.impl;
 
-import com.imooc.sell.dao.SellerInfoDao;
-import com.imooc.sell.entity.SellerInfo;
-import com.imooc.sell.service.SellerInfoService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.imooc.sell.dao.SellerInfoDao;
+import com.imooc.sell.entity.SellerInfo;
+import com.imooc.sell.service.SellerInfoService;
 
 @Service
 public class SellerInfoServiceImpl implements SellerInfoService {

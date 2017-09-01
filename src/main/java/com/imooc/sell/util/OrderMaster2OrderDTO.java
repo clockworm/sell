@@ -1,12 +1,12 @@
 package com.imooc.sell.util;
 
-import com.imooc.sell.dto.OrderDTO;
-import com.imooc.sell.entity.OrderMaster;
-import org.springframework.beans.BeanUtils;
-
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.BeanUtils;
+
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.entity.OrderMaster;
 
 /**
  * 转换器

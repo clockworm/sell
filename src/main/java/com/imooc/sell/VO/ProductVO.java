@@ -1,11 +1,12 @@
 package com.imooc.sell.VO;
 
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 import lombok.ToString;
-
-import java.util.List;
 
 /**
  * 商品(包含類目)VO

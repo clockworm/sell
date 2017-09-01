@@ -2,7 +2,6 @@ package com.imooc.sell.enums;
 
 
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * 订单状态

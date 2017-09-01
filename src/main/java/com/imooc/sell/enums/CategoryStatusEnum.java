@@ -1,6 +1,5 @@
 package com.imooc.sell.enums;
 
-import lombok.Data;
 import lombok.Getter;
 
 /**

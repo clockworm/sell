@@ -5,8 +5,12 @@ import com.imooc.sell.enums.ResultEnum;
 /**
  * 异常信息
  */
+@SuppressWarnings("unused")
 public class SellException extends RuntimeException{
-    private Integer code;
+	
+	private static final long serialVersionUID = 1L;
+	
+	private Integer code;
 
     public SellException(ResultEnum resultEnum) {
         super(resultEnum.getMessage());

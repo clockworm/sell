@@ -1,9 +1,9 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.dto.OrderDTO;
-import com.imooc.sell.entity.OrderDetail;
-import com.imooc.sell.entity.OrderMaster;
-import lombok.extern.slf4j.Slf4j;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,9 +13,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.entity.OrderDetail;
+
+import lombok.extern.slf4j.Slf4j;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

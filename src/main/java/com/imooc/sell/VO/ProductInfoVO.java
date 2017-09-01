@@ -1,11 +1,12 @@
 package com.imooc.sell.VO;
 
 
+import java.math.BigDecimal;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 import lombok.ToString;
-
-import java.math.BigDecimal;
 
 /**
  * 交互前端显示

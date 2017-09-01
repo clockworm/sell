@@ -1,5 +1,7 @@
 package com.imooc.sell.converter;
 
+import java.util.List;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.imooc.sell.dto.OrderDTO;
@@ -7,9 +9,8 @@ import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.enums.ResultEnum;
 import com.imooc.sell.exception.SellException;
 import com.imooc.sell.web.form.OrderForm;
-import lombok.extern.slf4j.Slf4j;
 
-import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class OrderForm2OrderDTOConverter {
     public static OrderDTO converter(OrderForm orderForm){

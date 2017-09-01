@@ -1,12 +1,14 @@
 package com.imooc.sell.entity;
 
-import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
+import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.math.BigDecimal;
+
+import org.hibernate.annotations.DynamicUpdate;
+
+import lombok.Data;
 
 /**
  * 订单详情明细

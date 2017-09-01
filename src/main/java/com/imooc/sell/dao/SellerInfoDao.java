@@ -1,7 +1,8 @@
 package com.imooc.sell.dao;
 
-import com.imooc.sell.entity.SellerInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.imooc.sell.entity.SellerInfo;
 
 /**
  * 买家

@@ -1,10 +1,7 @@
 package com.imooc.sell.dao;
 
-import com.imooc.sell.entity.ProductCategory;
-import com.imooc.sell.entity.ProductInfo;
-import com.imooc.sell.enums.CategoryStatusEnum;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
+import java.math.BigDecimal;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigDecimal;
+import com.imooc.sell.entity.ProductInfo;
+import com.imooc.sell.enums.CategoryStatusEnum;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

@@ -1,8 +1,8 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.entity.ProductCategory;
-
 import java.util.List;
+
+import com.imooc.sell.entity.ProductCategory;
 
 public interface ProductCategoryService extends BaseService<ProductCategory> {
 

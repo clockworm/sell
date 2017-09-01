@@ -1,10 +1,7 @@
 package com.imooc.sell.VO;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import lombok.ToString;
-
-import java.util.List;
 
 /**
  * HTTP 請求最外層對象

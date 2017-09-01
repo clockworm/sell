@@ -1,9 +1,10 @@
 package com.imooc.sell.dao;
 
-import com.imooc.sell.entity.ProductCategory;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
+import com.imooc.sell.entity.ProductCategory;
 
 /**
  * 类目接口
