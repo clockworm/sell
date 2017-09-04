@@ -14,6 +14,8 @@ public enum ResultEnum {
     ORDER_DETAIL_EMPTY(16,"订单中無商品詳情"),
     PAYSTATUS_ERROR(17,"支付狀態錯誤"),
     CART_EMPTY(18,"購物車為空"),
+    ORDER_OWNER_ERROR(19,"该订单不属于当前用户"),
+    WX_MP_ERROR(20,"微信网页授权 微信公众账号错误"),
     ;
 
     private Integer code;
