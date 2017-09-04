@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
+
 import com.imooc.sell.entity.SellerInfo;
 
 @RunWith(SpringRunner.class)
@@ -55,6 +56,13 @@ public class SellerInfoServiceImplTest {
     @Test
     public void findAll() throws Exception {
         List<SellerInfo> list = sellerInfoService.findAll();
+       /* List<String> collect = list.stream().map(e -> e.getUsername()).collect(Collectors.toList());
+        for (String string : collect) {
+			System.err.println(string);
+		}*/
+        for (SellerInfo sellerInfo : list) {
+			System.err.println(sellerInfo.getUsername());
+		}
         Assert.assertNotEquals(0,list.size());
     }
 
