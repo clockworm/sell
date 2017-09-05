@@ -1,4 +1,4 @@
-package com.imooc.sell.VO;
+package com.imooc.sell.vo;
 
 
 import java.util.List;

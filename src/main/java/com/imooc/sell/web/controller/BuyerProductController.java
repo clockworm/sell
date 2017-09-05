@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.imooc.sell.VO.ProductInfoVO;
-import com.imooc.sell.VO.ProductVO;
-import com.imooc.sell.VO.ResultVO;
 import com.imooc.sell.entity.ProductCategory;
 import com.imooc.sell.entity.ProductInfo;
 import com.imooc.sell.enums.CategoryStatusEnum;
 import com.imooc.sell.service.ProductCategoryService;
 import com.imooc.sell.service.ProductInfoService;
 import com.imooc.sell.util.ResultVOUtil;
+import com.imooc.sell.vo.ProductInfoVO;
+import com.imooc.sell.vo.ProductVO;
+import com.imooc.sell.vo.ResultVO;
 
 @RestController
 @RequestMapping("/buyer/product")

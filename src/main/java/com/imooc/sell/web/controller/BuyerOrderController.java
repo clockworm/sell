@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.imooc.sell.VO.ResultVO;
 import com.imooc.sell.converter.OrderForm2OrderDTOConverter;
 import com.imooc.sell.dto.OrderDTO;
 import com.imooc.sell.enums.ResultEnum;
 import com.imooc.sell.exception.SellException;
 import com.imooc.sell.service.OrderService;
 import com.imooc.sell.util.ResultVOUtil;
+import com.imooc.sell.vo.ResultVO;
 import com.imooc.sell.web.form.OrderForm;
 
 import lombok.extern.slf4j.Slf4j;

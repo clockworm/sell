@@ -1,6 +1,6 @@
 package com.imooc.sell.util;
 
-import com.imooc.sell.VO.ResultVO;
+import com.imooc.sell.vo.ResultVO;
 
 /**
  * 前端交互
