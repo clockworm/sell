@@ -28,7 +28,7 @@ public class PayServiceImpl implements PayService {
         payRequest.setOrderId(orderDTO.getOrderId());
         payRequest.setOrderName(ORDER_NAME);
         payRequest.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);
-        log.info("[微信支付] 请求入参:{}",payRequest);
+        log.info("[微信支付] 请求入参:{}",JsonUtil.toJson(payRequest));
         PayResponse pay = bestPayService.pay(payRequest);
         log.info("[微信支付] 结果出参:{}", JsonUtil.toJson(pay));
     }
