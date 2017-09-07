@@ -2,12 +2,13 @@ package com.imooc.sell.web.controller;
 
 import java.util.Map;
 
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.imooc.sell.util.KeyUtil;
@@ -24,10 +25,30 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Controller
 @Slf4j
+@RequestMapping(value="pay")
 public class PayController {
 
     @Autowired
+    private OrderService orderService;
+
+    @Autowired
     private BestPayServiceImpl bestPayService;
+
+    /**
+     *创建订单
+     */
+    @GetMapping("create")
+    public void create(String orderId,String returnUrl){
+        //查询订单
+        OrderDTO orderDTO = orderService.findOne(orderId);
+        if(orderDTO == null){
+            throw new SellException(ResultEnum.ORDER_NOT_EXIST);
+        }
+        //发起支付
+
+
+    }
+
 
     /** 支付*/
     @GetMapping(value="pay")

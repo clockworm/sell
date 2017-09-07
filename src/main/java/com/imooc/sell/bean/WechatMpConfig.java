@@ -1,5 +1,6 @@
-package com.imooc.sell.config;
+package com.imooc.sell.bean;
 
+import com.imooc.sell.config.WechatAccountConfig;
 import me.chanjar.weixin.mp.api.WxMpConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpService;
@@ -9,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
- * 微信SDK配置
+ * 微信网页授权SDK配置
  */
 @Component
 public class WechatMpConfig {
