@@ -34,54 +34,58 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BuyerOrderController {
 
-    @Autowired
-    private OrderService orderService;
+	@Autowired
+	private OrderService orderService;
 
-    //创建订单
+	// 创建订单
 	@PostMapping("create")
-    public ResultVO<?> create(@Valid OrderForm orderForm, BindingResult bindingResult){
-        HashMap<String, String> map = new HashMap<>();
-        if(bindingResult.hasErrors()){
-            log.error("[創建訂單] 參數不正確,orderForm={}",orderForm);
-            throw new SellException(ResultEnum.PARAM_ERROR.getCode(),bindingResult.getFieldError().getDefaultMessage());
-        }
-        OrderDTO dto = OrderForm2OrderDTOConverter.converter(orderForm);
-        if(dto.getDetailList().isEmpty()){
-            log.error("[創建訂單] 購物車不能為空");
-            throw new SellException(ResultEnum.CART_EMPTY);
-        }
-        dto = orderService.create(dto);
-        map.put("orderId",dto.getOrderId());
-        return ResultVOUtil.success(map);
-    }
-    //订单列表
-    @GetMapping("list")
-    public  ResultVO<?> list(@RequestParam(value = "openId") String openId,
-                                                   @RequestParam(value = "page",defaultValue = "0") Integer page,
-                                                   @RequestParam(value = "size",defaultValue = "10") Integer size){
-        if(StringUtils.isEmpty(openId)){
-            log.error("[查询订单列表] openid为空");
-            throw new SellException(ResultEnum.PARAM_ERROR);
-        }
-        PageRequest request = new PageRequest(page, size);
-        Page<OrderDTO> list = orderService.findList(openId, request);
-        return  ResultVOUtil.success(list);
-    }
-    //订单详情
-    @GetMapping("detail")
-    public ResultVO<?> findOrderDetail(@RequestParam(value = "openId") String openId,
-                                                             @RequestParam(value = "orderId") String orderId){
-        //TODO
-        OrderDTO orderDTO = orderService.findOne(orderId);
-        return ResultVOUtil.success(orderDTO);
-    }
-    //取消订单
+	public ResultVO<?> create(@Valid OrderForm orderForm, BindingResult bindingResult) {
+		HashMap<String, String> map = new HashMap<>();
+		if (bindingResult.hasErrors()) {
+			log.error("[創建訂單] 參數不正確,orderForm={}", orderForm);
+			throw new SellException(ResultEnum.PARAM_ERROR.getCode(),
+					bindingResult.getFieldError().getDefaultMessage());
+		}
+		OrderDTO dto = OrderForm2OrderDTOConverter.converter(orderForm);
+		if (dto.getDetailList().isEmpty()) {
+			log.error("[創建訂單] 購物車不能為空");
+			throw new SellException(ResultEnum.CART_EMPTY);
+		}
+		dto = orderService.create(dto);
+		map.put("orderId", dto.getOrderId());
+		return ResultVOUtil.success(map);
+	}
+
+	// 订单列表
+	@GetMapping("list")
+	public ResultVO<?> list(@RequestParam(value = "openId") String openId,
+							  @RequestParam(value = "page", defaultValue = "0") Integer page,
+							  @RequestParam(value = "size", defaultValue = "10") Integer size) {
+		if (StringUtils.isEmpty(openId)) {
+			log.error("[查询订单列表] openid为空");
+			throw new SellException(ResultEnum.PARAM_ERROR);
+		}
+		PageRequest request = new PageRequest(page, size);
+		Page<OrderDTO> list = orderService.findList(openId, request);
+		return ResultVOUtil.success(list);
+	}
+
+	// 订单详情
+	@GetMapping("detail")
+	public ResultVO<?> findOrderDetail(@RequestParam(value = "openId") String openId,
+										   @RequestParam(value = "orderId") String orderId) {
+		// TODO
+		OrderDTO orderDTO = orderService.findOne(orderId);
+		return ResultVOUtil.success(orderDTO);
+	}
+
+	// 取消订单
 	@PostMapping("cancelOrder")
-    public  ResultVO<?> cancelOrder(@RequestParam(value = "openId") String openId,
-                                 @RequestParam(value = "orderId") String orderId){
-        //TODO
-        OrderDTO orderDTO = orderService.findOne(orderId);
-        orderService.cancel(orderDTO);
-        return ResultVOUtil.success();
-    }
+	public ResultVO<?> cancelOrder(@RequestParam(value = "openId") String openId,
+									   @RequestParam(value = "orderId") String orderId) {
+		// TODO
+		OrderDTO orderDTO = orderService.findOne(orderId);
+		orderService.cancel(orderDTO);
+		return ResultVOUtil.success();
+	}
 }
