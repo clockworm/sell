@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * 微信网页授权SDK配置
  */
 @Component
-public class WechatMpConfig {
+public class WechatMpConfigBean {
     @Autowired
     WechatAccountConfig wechatAccountConfig;
 

@@ -12,7 +12,7 @@ import com.lly835.bestpay.service.impl.BestPayServiceImpl;
  * 微信支付配置
  */
 @Component
-public class WechatPayConfig {
+public class WechatPayConfigBean {
 
     @Autowired
     private WechatAccountConfig wechatAccountConfig;
