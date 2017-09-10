@@ -39,7 +39,7 @@ public class PayController {
     private PayService payService;
 
     /**
-     *创建订单
+     *创建预支付订单
      */
     @GetMapping("create")
     public ModelAndView create(String orderId,String returnUrl,Map<String,Object> map){
@@ -54,26 +54,6 @@ public class PayController {
         //发起支付 调用微信H5支付JSPI
         return  new ModelAndView("pay",map);
     }
-
-
-    /** 支付*/
-    @GetMapping(value="pay")
-    public ModelAndView pay(@RequestParam("openid") String openid, Map<String,Object> map){
-        PayRequest request = new PayRequest();
-
-        //支付请求参数
-        request.setOpenid(openid);
-        request.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);
-        request.setOrderId(KeyUtil.genUniqueKey());
-        request.setOrderAmount(0.01);
-        request.setOrderName("最好的支付");
-        log.info("[发起支付] request={}", JsonUtil.toJson(request));
-
-        PayResponse payResponse = bestPayService.pay(request);
-        map.put("payResponse",payResponse);
-        return new ModelAndView("pay/create",map);
-    }
-
 
     /** 异步回调 */
     @PostMapping(value="notify")
