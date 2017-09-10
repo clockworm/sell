@@ -13,7 +13,7 @@ spring:
       prefix: /templates/
       suffix: .ftl
 server:
-  context-path: /sell
+#  context-path: /sell
   port: 9000
 # wx1fabbe95edaa7ed7
 #E:/learn/sell/weixin_cert/h5.p12
