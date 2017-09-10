@@ -52,7 +52,7 @@ public class PayController {
         PayResponse payResponse = payService.create(orderDTO);
         map.put("payResponse",payResponse);
         //发起支付 调用微信H5支付JSPI
-        return  new ModelAndView("pay/create",map);
+        return  new ModelAndView("pay",map);
     }
 
 
