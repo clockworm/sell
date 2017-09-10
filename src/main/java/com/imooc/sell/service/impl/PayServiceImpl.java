@@ -19,9 +19,8 @@ public class PayServiceImpl implements PayService {
 
     private static final  String ORDER_NAME="微信商品订单";
 
-
     @Override
-    public void create(OrderDTO orderDTO) {
+    public PayResponse create(OrderDTO orderDTO) {
         PayRequest payRequest = new PayRequest();
         payRequest.setOpenid(orderDTO.getBuyerOpenid());
         payRequest.setOrderAmount(orderDTO.getOrderAmount().doubleValue());
@@ -31,5 +30,6 @@ public class PayServiceImpl implements PayService {
         log.info("[微信支付] 请求入参:{}",JsonUtil.toJson(payRequest));
         PayResponse pay = bestPayService.pay(payRequest);
         log.info("[微信支付] 结果出参:{}", JsonUtil.toJson(pay));
+        return  pay;
     }
 }
