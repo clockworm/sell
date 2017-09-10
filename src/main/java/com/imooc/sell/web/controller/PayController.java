@@ -26,7 +26,6 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Controller
 @Slf4j
-@RequestMapping(value="pay")
 public class PayController {
 
     @Autowired
@@ -41,7 +40,7 @@ public class PayController {
     /**
      *创建预支付订单
      */
-    @GetMapping("create")
+    @GetMapping("pay")
     public ModelAndView create(String orderId,String returnUrl,Map<String,Object> map){
         //查询订单
         OrderDTO orderDTO = orderService.findOne(orderId);
@@ -52,7 +51,7 @@ public class PayController {
         PayResponse payResponse = payService.create(orderDTO);
         map.put("payResponse",payResponse);
         //发起支付 调用微信H5支付JSPI
-        return  new ModelAndView("pay",map);
+        return  new ModelAndView("pay/create",map);
     }
 
     /** 异步回调 */
