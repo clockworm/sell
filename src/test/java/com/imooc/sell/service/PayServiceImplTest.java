@@ -26,8 +26,8 @@ public class PayServiceImplTest {
 
     @Test
     public void refund() throws Exception {
-        OrderDTO orderDTO = orderService.findOne("7235892789Ax9752");
-        payService.refund(orderDTO);
+        OrderDTO orderDTO = orderService.findOne("a1234562asdsa1dsadsx");
+        orderService.cancel(orderDTO);
     }
 
 }
