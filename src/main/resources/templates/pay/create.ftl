@@ -19,6 +19,7 @@
                     }else {
                         alert('未知异常');
                     }
+                    location.href="${returnUrl}";
                 }
         );
     }
