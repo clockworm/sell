@@ -5,12 +5,7 @@ import com.imooc.sell.enums.ResultEnum;
 import com.imooc.sell.exception.SellException;
 import com.imooc.sell.service.OrderService;
 import com.imooc.sell.service.PayService;
-import com.imooc.sell.util.JsonUtil;
-import com.imooc.sell.util.KeyUtil;
-import com.lly835.bestpay.enums.BestPayTypeEnum;
-import com.lly835.bestpay.model.PayRequest;
 import com.lly835.bestpay.model.PayResponse;
-import com.lly835.bestpay.service.BestPayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,32 +25,14 @@ public class PayController {
 
     @Autowired
     private OrderService orderService;
-    @Autowired
-    private BestPayService bestPayService;
 
     @Autowired
     private PayService payService;
 
-    /** 账号借用*/
-    @GetMapping("pay")
-    public ModelAndView pay(String openid,Map<String,Object> map){
-        PayRequest payRequest = new PayRequest();
-        payRequest.setOpenid(openid);
-        payRequest.setOrderAmount(0.01d);
-        payRequest.setOrderId("7235892789Ax9752");
-        payRequest.setOrderName("借用账号支付");
-        payRequest.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);
-        log.info("[微信支付 账号借用] 发去支付 请求入参:{}", JsonUtil.toJson(payRequest));
-        PayResponse payResponse = bestPayService.pay(payRequest);
-        log.info("[微信支付 账号借用] 发起支付 结果出参:{}", JsonUtil.toJson(payResponse));
-        map.put("payResponse",payResponse);
-        map.put("returnUrl","www.baidu.com");
-        return  new ModelAndView("pay/create",map);
-    }
     /**
      *创建预支付订单
      */
-    @GetMapping("pay-weixin")
+    @GetMapping("pay")
     public ModelAndView create(String orderId,String returnUrl,Map<String,Object> map){
         //查询订单
         OrderDTO orderDTO = orderService.findOne(orderId);
