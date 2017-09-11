@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.imooc.sell.service.PayService;
+import com.lly835.bestpay.model.RefundResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -45,12 +47,14 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private ProductInfoService productInfoService;
 
+    @Autowired
+    private PayService payService;
+
     @Override
     @Transactional
     public OrderDTO create(OrderDTO orderDTO) {
         String orderId = KeyUtil.genUniqueKey();
         BigDecimal orderAmount = new BigDecimal(BigInteger.ZERO);
-
         //1.商品信息    3.  4.
         List<OrderDetail> detailList = orderDTO.getDetailList();
         for (OrderDetail orderDetail : detailList) {
@@ -150,7 +154,7 @@ public class OrderServiceImpl implements OrderService {
         productInfoService.increaseStock(cartDTOS);
         //如果支付完畢 需要退款
         if (PayStatusEnum.SUCCESS.getCode().equals(orderDTO.getPayStatus())) {
-            //TODO
+             payService.refund(orderDTO);
         }
         return orderDTO;
     }
