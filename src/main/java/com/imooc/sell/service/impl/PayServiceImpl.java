@@ -47,7 +47,7 @@ public class PayServiceImpl implements PayService {
         //验证签名(SDK 已经实现)   微信支付状态(SDK 已经实现)  支付金额
         log.info("[微信支付 异步回调] 回参notifyData文本={}", notifyData);
         PayResponse response = bestPayService.asyncNotify(notifyData);
-        log.info("[微信支付 异步回调] request={}", JsonUtil.toJson(response));
+        log.info("[微信支付 异步回调] 回参:{}", JsonUtil.toJson(response));
         //修改订单支付状态
         OrderDTO orderDTO = orderService.findOne(response.getOrderId());
         if (orderDTO == null) throw new SellException(ResultEnum.ORDER_NOT_EXIST);
@@ -67,9 +67,9 @@ public class PayServiceImpl implements PayService {
         refundRequest.setOrderId(orderDTO.getOrderId());
         refundRequest.setOrderAmount(orderDTO.getOrderAmount().doubleValue());
         refundRequest.setPayTypeEnum(BestPayTypeEnum.WXPAY_H5);
-        log.info("[微信退款 发起退款订单入参 refundRequest:{}]",JsonUtil.toJson(refundRequest));
+        log.info("[微信退款 发起退款订单入参:{}]",JsonUtil.toJson(refundRequest));
         RefundResponse refundResponse = bestPayService.refund(refundRequest);
-        log.info("[微信退款 发起退款订单 微信处理回参 refundResponse:{}]",JsonUtil.toJson(refundResponse));
+        log.info("[微信退款 发起退款订单 微信处理回参:{}]",JsonUtil.toJson(refundResponse));
         return  refundResponse;
     }
 }
