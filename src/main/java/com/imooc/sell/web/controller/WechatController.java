@@ -54,7 +54,7 @@ public class WechatController {
         }
         String openId = accessToken.getOpenId();
         log.info("[微信网页授权] 获取用户openId:{}", openId);
-        return "redirect:" + returnUrl + "?openid" + openId;
+        return "redirect:" + returnUrl + "?openid=" + openId;
     }
 
 
