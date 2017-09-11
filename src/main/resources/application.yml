@@ -16,7 +16,7 @@ server:
 #  context-path: /sell
   port: 9000
 # wx1fabbe95edaa7ed7
-#E:/learn/sell/weixin_cert/h5.p12
+#/root/usr/local/weixin_cert/h5.p12
 wechat:
  mpAppId: wxd898fcb01713c658
  mpAppSecret: fb7915b63ba1140c619803789ee30e7c
