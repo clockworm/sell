@@ -11,6 +11,6 @@ public class JsonUtil {
         gsonBuilder.setPrettyPrinting();
         Gson gson = gsonBuilder.create();
         String json = gson.toJson(object);
-        return json;
+        return object.getClass().getName() + "=" + json;
     }
 }
