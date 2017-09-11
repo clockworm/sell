@@ -3,8 +3,6 @@ package com.imooc.sell.web.controller;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import com.imooc.sell.util.JsonUtil;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.imooc.sell.enums.ResultEnum;
 import com.imooc.sell.exception.SellException;
+import com.imooc.sell.util.JsonUtil;
 
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.api.WxConsts;

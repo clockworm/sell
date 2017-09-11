@@ -1,12 +1,7 @@
 package com.imooc.sell.web.controller;
 
-import com.imooc.sell.dto.OrderDTO;
-import com.imooc.sell.enums.ResultEnum;
-import com.imooc.sell.exception.SellException;
-import com.imooc.sell.service.OrderService;
-import com.imooc.sell.service.PayService;
-import com.lly835.bestpay.model.PayResponse;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,13 +9,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Map;
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.service.OrderService;
+import com.imooc.sell.service.PayService;
+import com.lly835.bestpay.model.PayResponse;
 
 /**
  *微信支付控制器
  */
 @Controller
-@Slf4j
 public class PayController {
 
     @Autowired
