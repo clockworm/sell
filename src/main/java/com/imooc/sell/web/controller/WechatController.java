@@ -30,7 +30,7 @@ public class WechatController {
     @GetMapping("authorize")
     public String authorize(@RequestParam("returnUrl") String returnUrl) {
         //配置回调
-        String url = "http://sell.mynatapp.cc/wechat/userInfo";
+        String url = "http://sell.mynatapp.cc/sell/wechat/userInfo";
         //调用
         String redirectUrl;
 		try {
