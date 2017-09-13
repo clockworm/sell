@@ -11,8 +11,10 @@ public interface OrderService extends BaseService<OrderDTO>{
 
     /**创建订单*/
     OrderDTO create(OrderDTO orderDTO);
-    /**查询订单列表*/
+    /**查询某买家订单列表*/
     Page<OrderDTO> findList(String buyerOpenid, Pageable pageable);
+    /**查询所有订单列表*/
+    Page<OrderDTO> findList(Pageable pageable);
     /**取消订单*/
     OrderDTO cancel(OrderDTO orderDTO);
     /**完结订单*/

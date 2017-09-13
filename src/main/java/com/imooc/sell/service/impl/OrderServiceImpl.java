@@ -128,6 +128,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public Page<OrderDTO> findList(Pageable pageable) {
+        Page<OrderMaster> list = orderMasterDao.findAll(pageable);
+        List<OrderDTO> dtos = OrderMaster2OrderDTO.convert(list.getContent());
+        PageImpl<OrderDTO> page = new PageImpl<>(dtos, pageable, list.getTotalElements());
+        return page;
+    }
+
+    @Override
     @Transactional
     public OrderDTO cancel(OrderDTO orderDTO) {
         OrderMaster orderMaster = new OrderMaster();
