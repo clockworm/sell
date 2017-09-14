@@ -13,7 +13,6 @@ import com.imooc.sell.enums.OrderStatusEnum;
 import com.imooc.sell.enums.PayStatusEnum;
 
 import lombok.Data;
-import lombok.ToString;
 
 /**
  * 订单表
@@ -22,7 +21,6 @@ import lombok.ToString;
 @Table(name = "order_master")
 @DynamicUpdate
 @Data
-@ToString
 public class OrderMaster {
     /** 订单ID*/
     @Id

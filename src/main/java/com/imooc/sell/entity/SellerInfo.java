@@ -7,7 +7,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.DynamicUpdate;
 
 import lombok.Data;
-import lombok.ToString;
 
 /**
  * 买家
@@ -16,7 +15,6 @@ import lombok.ToString;
 @Table(name = "seller_info")
 @DynamicUpdate
 @Data
-@ToString
 public class SellerInfo {
     @Id
     private String id;

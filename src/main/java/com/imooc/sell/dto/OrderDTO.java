@@ -1,5 +1,11 @@
 package com.imooc.sell.dto;
 
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
+import javax.persistence.Id;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.imooc.sell.converter.Date2LongSerializer;
@@ -7,16 +13,10 @@ import com.imooc.sell.entity.OrderDetail;
 import com.imooc.sell.enums.OrderStatusEnum;
 import com.imooc.sell.enums.PayStatusEnum;
 import com.imooc.sell.util.EnumUtil;
-import lombok.Data;
-import lombok.ToString;
 
-import javax.persistence.Id;
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.List;
+import lombok.Data;
 
 @Data
-@ToString
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO {
     /** 订单ID*/
