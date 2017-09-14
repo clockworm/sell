@@ -12,15 +12,15 @@ spring:
     view:
       prefix: /templates/
       suffix: .ftl
+  freemarker:
+    settings: {template_update_delay: 0}
 server:
   context-path: /sell
   port: 9000
-# wx1fabbe95edaa7ed7
-#/root/usr/local/weixin_cert/h5.p12
 wechat:
- mpAppId: wxd898fcb01713c658
- mpAppSecret: fb7915b63ba1140c619803789ee30e7c
- mchId: 1483469312
- mchKey: C5245D70627C1F8E9964D494B0735025
- keyPath: /root/usr/local/weixin_cert/h5.p12
- notifyUrl: http://sell.mynatapp.cc/notify
+  mpAppId: wxd898fcb01713c658
+  mpAppSecret: fb7915b63ba1140c619803789ee30e7c
+  mchId: 1483469312
+  mchKey: C5245D70627C1F8E9964D494B0735025
+  keyPath: /root/usr/local/weixin_cert/h5.p12
+  notifyUrl: http://sell.mynatapp.cc/notify
