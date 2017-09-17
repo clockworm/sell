@@ -44,6 +44,8 @@ public class SellerOrderController {
 		PageRequest pageRequest = new PageRequest(page - 1, size);
 		Page<OrderDTO> list = orderService.findList(pageRequest);
 		log.info("分页查询所有订单 出参:{}", JsonUtil.toJson(list.getContent()));
+		map.put("currentPage",page);
+		map.put("size",size);
 		map.put("orders", list);
 		return new ModelAndView("order/list", map);
 	}
