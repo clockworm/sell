@@ -2,14 +2,16 @@ package com.imooc.sell.exception;
 
 import com.imooc.sell.enums.ResultEnum;
 
+import lombok.Getter;
+
 /**
  * 异常信息
  */
-@SuppressWarnings("unused")
 public class SellException extends RuntimeException{
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Getter
 	private Integer code;
 
     public SellException(ResultEnum resultEnum) {
