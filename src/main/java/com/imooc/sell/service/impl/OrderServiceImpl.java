@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import com.imooc.sell.converter.OrderMaster2OrderDTO;
 import com.imooc.sell.dao.OrderDetailDao;
 import com.imooc.sell.dao.OrderMasterDao;
 import com.imooc.sell.dto.CartDTO;
@@ -29,7 +30,6 @@ import com.imooc.sell.service.OrderService;
 import com.imooc.sell.service.PayService;
 import com.imooc.sell.service.ProductInfoService;
 import com.imooc.sell.util.KeyUtil;
-import com.imooc.sell.util.OrderMaster2OrderDTO;
 
 import lombok.extern.slf4j.Slf4j;
 
