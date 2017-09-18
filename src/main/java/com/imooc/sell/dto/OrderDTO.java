@@ -53,6 +53,6 @@ public class OrderDTO {
     /** 支付状态信息 对象转JSON 忽略该属性或者方法*/
     @JsonIgnore
     public String getPayStatusMsg(){
-        return EnumUtil.getEnumByCode(orderStatus,PayStatusEnum.class).getMessage();
+        return EnumUtil.getEnumByCode(payStatus,PayStatusEnum.class).getMessage();
     }
 }

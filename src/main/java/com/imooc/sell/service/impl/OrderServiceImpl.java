@@ -161,7 +161,7 @@ public class OrderServiceImpl implements OrderService {
         productInfoService.increaseStock(cartDTOS);
         //如果支付完畢 需要退款
         if (PayStatusEnum.SUCCESS.getCode().equals(orderDTO.getPayStatus())) {
-             payService.refund(orderDTO);
+//             payService.refund(orderDTO);
         }
         return orderDTO;
     }

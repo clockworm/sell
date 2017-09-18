@@ -1,21 +1,22 @@
 package com.imooc.sell.web.controller;
 
-import java.util.Map;
-
+import com.imooc.sell.dto.OrderDTO;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.service.OrderService;
+import com.imooc.sell.util.JsonUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.imooc.sell.dto.OrderDTO;
-import com.imooc.sell.service.OrderService;
-import com.imooc.sell.util.JsonUtil;
-
-import lombok.extern.slf4j.Slf4j;
+import java.util.Map;
 
 /**
  * 卖家端订单
@@ -30,11 +31,8 @@ public class SellerOrderController {
 
 	/**
 	 * 所有订单
-	 * 
-	 * @param page
-	 *            第几页开始 默认第一页开始 即为0
-	 * @param size
-	 *            每页多少条
+	 * @param page 第几页开始 默认第一页开始 即为0
+	 * @param size 每页多少条
 	 * @return
 	 */
 	@GetMapping("list")
@@ -49,5 +47,22 @@ public class SellerOrderController {
 		map.put("orders", list);
 		return new ModelAndView("order/list", map);
 	}
+
+	/** 取消订单*/
+	@GetMapping("cancel")
+	public ModelAndView cancel(String orderId,Map<String,Object> map){
+		map.put("url","/sell/seller/order/list");
+		try{
+			OrderDTO orderDTO = orderService.findOne(orderId);
+			orderService.cancel(orderDTO);
+		}catch (SellException e){
+			log.error("[卖家端取消订单] 发生异常:{}",e);
+			map.put("msg", e.getMessage());
+			return new ModelAndView("common/error",map);
+		}
+		map.put("msg",ResultEnum.ORDER_CANCEL_SUCCESS.getMessage());
+		return  new ModelAndView("common/success");
+	}
+
 
 }
