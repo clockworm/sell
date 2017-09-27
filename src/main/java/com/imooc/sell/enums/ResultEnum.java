@@ -19,6 +19,7 @@ public enum ResultEnum {
     WX_MP_ERROR(20,"微信网页授权 微信公众账号错误"),
     WXPAY_NOTIFY_MONEY_VERIFY_ERROR(21,"微信支付异步通知 金额效验不通过"),
     ORDER_CANCEL_SUCCESS(0,"订单取消成功"),
+    ORDER_OVER_SUCCESS(0,"订单完成成功"),
     ;
 
     private Integer code;

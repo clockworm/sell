@@ -33,9 +33,9 @@
                     <td> ${orderDTO.orderStatusMsg}</td>
                     <td> ${orderDTO.payStatusMsg}</td>
                     <td> ${orderDTO.createTime}</td>
-                    <td> 详情</td>
+                    <td> <a href="/sell/seller/order/detail?orderId=${orderDTO.orderId}">详情</a></td>
                     <td>
-                        <#if orderDTO.orderStatusMsg != "已取消">
+                        <#if orderDTO.orderStatusMsg == "新订单">
                             <a href="/sell/seller/order/cancel?orderId=${orderDTO.orderId}">取消</a>
                         </#if>
                      </td>

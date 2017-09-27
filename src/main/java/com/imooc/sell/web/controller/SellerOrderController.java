@@ -11,7 +11,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -64,5 +63,34 @@ public class SellerOrderController {
 		return  new ModelAndView("common/success");
 	}
 
+	/**订单详情*/
+	@GetMapping("detail")
+	public ModelAndView detail(String orderId,Map<String,Object> map){
+		map.put("url","/sell/seller/order/list");
+		try{
+			OrderDTO dto = orderService.findOne(orderId);
+			map.put("order",dto);
+		}catch (SellException e){
+			log.error("[卖家端查询订单详情异常] {}",e);
+			map.put("msg", e.getMessage());
+			return new ModelAndView("common/error",map);
+		}
+		return new ModelAndView("order/detail",map);
+	}
 
+	/**完结订单*/
+	@GetMapping("finish")
+	public ModelAndView finish(String orderId,Map<String,Object> map) {
+		map.put("url", "/sell/seller/order/list");
+		try {
+			OrderDTO dto = orderService.findOne(orderId);
+			orderService.finish(dto);
+		} catch (SellException e) {
+			log.error("[卖家端完结订单异常] {}", e);
+			map.put("msg", e.getMessage());
+			return new ModelAndView("common/error", map);
+		}
+		map.put("msg",ResultEnum.ORDER_OVER_SUCCESS.getMessage());
+		return new ModelAndView("common/success",map);
+	}
 }
