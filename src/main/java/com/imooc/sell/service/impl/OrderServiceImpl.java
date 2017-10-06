@@ -27,7 +27,6 @@ import com.imooc.sell.enums.PayStatusEnum;
 import com.imooc.sell.enums.ResultEnum;
 import com.imooc.sell.exception.SellException;
 import com.imooc.sell.service.OrderService;
-import com.imooc.sell.service.PayService;
 import com.imooc.sell.service.ProductInfoService;
 import com.imooc.sell.util.KeyUtil;
 
@@ -45,9 +44,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private ProductInfoService productInfoService;
-
-    @Autowired
-    private PayService payService;
 
     @Override
     @Transactional
