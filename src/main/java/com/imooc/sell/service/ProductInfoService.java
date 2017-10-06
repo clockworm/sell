@@ -20,4 +20,7 @@ public interface ProductInfoService extends BaseService<ProductInfo> {
 
     //減庫存
     void decreaseStock(List<CartDTO> cartDTOList);
+
+    /**上架:1 /下架:0*/
+    void offOronSale(String productId,Integer status);
 }

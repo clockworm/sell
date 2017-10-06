@@ -1,14 +1,16 @@
 package com.imooc.sell.entity;
 
-import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.imooc.sell.enums.CategoryStatusEnum;
+import com.imooc.sell.util.EnumUtil;
+import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.DynamicUpdate;
-
-import lombok.Data;
+import java.math.BigDecimal;
+import java.sql.Date;
 
 /**
  * 商品
@@ -27,4 +29,10 @@ public class ProductInfo {
     private String productIcon;
     private Integer productStatus;
     private Integer categoryType;
+    private Date createTime;
+    private Date updateTime;
+    @JsonIgnore
+    public String getProductStatusMsg(){
+        return EnumUtil.getEnumByCode(productStatus,CategoryStatusEnum.class).getMessage();
+    };
 }

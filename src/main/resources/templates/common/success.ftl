@@ -12,7 +12,7 @@
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <h4>
                     操作成功!
-                </h4> <strong>${msg}!</strong><a href="${url}" class="alert-link">3S后自动跳转</a>
+                </h4> <strong>${msg!""}!</strong><a href="${url}" class="alert-link">3S后自动跳转</a>
             </div>
         </div>
     </div>

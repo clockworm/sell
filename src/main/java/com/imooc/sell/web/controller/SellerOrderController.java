@@ -43,7 +43,8 @@ public class SellerOrderController {
 		log.info("分页查询所有订单 出参:{}", JsonUtil.toJson(list.getContent()));
 		map.put("currentPage",page);
 		map.put("size",size);
-		map.put("orders", list);
+		map.put("data", list);
+		map.put("controller", "order");
 		return new ModelAndView("order/list", map);
 	}
 

@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import lombok.Data;
 import lombok.ToString;
+import org.hibernate.validator.constraints.Range;
 
 /**
  * 订单相关表单
