@@ -1,5 +1,6 @@
 package com.imooc.sell.web.form;
 
+import com.imooc.sell.enums.CategoryStatusEnum;
 import lombok.Data;
 import lombok.ToString;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -27,7 +28,7 @@ public class ProductInfoForm {
     /** 商品简图*/
     private String productIcon;
     /** 商品状态*/
-    private Integer productStatus;
+    private Integer productStatus = CategoryStatusEnum.UP.getCode();
     /** 商品类目*/
     private Integer categoryType;
 
