@@ -42,10 +42,10 @@ public class SellerCategoryController {
     }
 
     @GetMapping("index")
-        public ModelAndView index(@RequestParam(value = "categoryId",required = false) String categoryId, Map<String,Object> map){
+        public ModelAndView index(@RequestParam(value = "categoryId",required = false) Integer categoryId, Map<String,Object> map){
             ProductCategory productCategory = null;
-            if(StringUtils.isNotEmpty(categoryId)){
-                productCategory = productCategoryService.findOne(categoryId);
+            if(categoryId > 0){
+                productCategory = productCategoryService.findOne(categoryId.toString());
             }
         map.put("data",productCategory);
         return  new ModelAndView("category/index");

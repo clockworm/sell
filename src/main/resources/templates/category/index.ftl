@@ -17,7 +17,7 @@
 
                         <div class="form-group">
                             <label>类目Type</label>
-                            <input type="text" class="form-control" name="categoryType" value="${(data.categoryType)!''}"/>
+                            <input type="number" class="form-control" name="categoryType" value="${(data.categoryType)!''}"/>
                         </div>
                         <input type="hidden" value="${(data.categoryId)!''}" name="categoryId">
                 </div> <button type="submit" class="btn btn-default">保存</button>
