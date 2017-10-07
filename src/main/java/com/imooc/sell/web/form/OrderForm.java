@@ -1,10 +1,8 @@
 package com.imooc.sell.web.form;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import lombok.Data;
 import lombok.ToString;
-import org.hibernate.validator.constraints.Range;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * 订单相关表单

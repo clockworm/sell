@@ -39,7 +39,7 @@
                             <td> ${productDTO.createTime}</td>
                             <td> ${productDTO.updateTime}</td>
                             <td>
-                                <a href="/sell/seller/order/detail?orderId=${productDTO.productId}">修改</a>
+                                <a href="/sell/seller/product/index?productId=${productDTO.productId}">修改</a>
                             </td>
                             <td>
                                 <#if productDTO.getProductStatusMsg()=="上架">
