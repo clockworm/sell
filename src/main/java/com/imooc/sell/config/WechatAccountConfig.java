@@ -12,10 +12,14 @@ import lombok.Data;
 @Component
 public class WechatAccountConfig {
 
-    /** 公众号ID*/
+    /** 公众平台ID*/
     private  String mpAppId;
-    /** 公众号密钥*/
+    /** 公众平台密钥*/
     private String mpAppSecret;
+    /** 开放平台号ID*/
+    private  String openAppId;
+    /** 开放平台密钥*/
+    private String openAppSecret;
     /** 商户号*/
     private String mchId;
     /** 商户密钥*/

@@ -22,13 +22,13 @@ public class SellerInfoServiceImplTest {
 
     @Test
     public void findByOpenid() throws Exception {
-        SellerInfo sellerInfo = sellerInfoService.findByOpenid("987654321");
+        SellerInfo sellerInfo = sellerInfoService.findByOpenid("oxDczwPj_zNdDL7fNG_RCMJh88fQ");
         Assert.assertNotNull(sellerInfo);
     }
 
     @Test
     public void findByUsernameAndPassword() throws Exception {
-        SellerInfo info = sellerInfoService.findByUsernameAndPassword("tangbiao", "123456");
+        SellerInfo info = sellerInfoService.findByUsernameAndPassword("tanglingyun", "123456");
         Assert.assertNotNull(info);
     }
 

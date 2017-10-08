@@ -16,7 +16,6 @@ import com.imooc.sell.entity.SellerInfo;
 @SpringBootTest
 public class SellerInfoDaoTest {
 
-
     @Autowired
     SellerInfoDao sellerInfoDao;
 
@@ -45,13 +44,13 @@ public class SellerInfoDaoTest {
 
     @Test
     public void findByOpenid() throws Exception {
-        SellerInfo sellerInfo = sellerInfoDao.findByOpenid("987654321");
+        SellerInfo sellerInfo = sellerInfoDao.findByOpenid("oTgZpwfEBevx0K010OoB4tzXue6o");
         Assert.assertNotNull(sellerInfo);
     }
 
     @Test
     public void findByUsernameAndPassword() throws Exception {
-        SellerInfo info = sellerInfoDao.findByUsernameAndPassword("tangbiao", "123456");
+        SellerInfo info = sellerInfoDao.findByUsernameAndPassword("tanglingyun", "123456");
         Assert.assertNotNull(info);
     }
 

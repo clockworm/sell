@@ -9,7 +9,7 @@ import org.hibernate.annotations.DynamicUpdate;
 import lombok.Data;
 
 /**
- * 买家
+ * 卖家管理后台
  */
 @Entity
 @Table(name = "seller_info")

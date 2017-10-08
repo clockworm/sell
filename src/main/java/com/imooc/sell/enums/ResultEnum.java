@@ -18,8 +18,12 @@ public enum ResultEnum {
     ORDER_OWNER_ERROR(19,"该订单不属于当前用户"),
     WX_MP_ERROR(20,"微信网页授权 微信公众账号错误"),
     WXPAY_NOTIFY_MONEY_VERIFY_ERROR(21,"微信支付异步通知 金额效验不通过"),
-    ORDER_CANCEL_SUCCESS(0,"订单取消成功"),
-    ORDER_OVER_SUCCESS(0,"订单完成成功"),
+    ORDER_CANCEL_SUCCESS(22,"订单取消成功"),
+    ORDER_OVER_SUCCESS(23,"订单完成成功"),
+    WX_OPEN_ERROR(24,"微信开放平台授权 微信公众账号错误"),
+    WX_LOGIN_FAIL(25,"微信开放平台授权 该用户没有关注平台 登录失败 "),
+    WX_LOGOUT_SUCCESS(26,"登出成功"),
+    WX_LOGOUT_FAIL(27,"登出失败"),
     ;
 
     private Integer code;
