@@ -1,13 +1,13 @@
 package com.imooc.sell.web.controller;
 
-import com.imooc.sell.config.ProjectUrlConfig;
-import com.imooc.sell.constant.CookieConstant;
-import com.imooc.sell.constant.RedisConstant;
-import com.imooc.sell.entity.SellerInfo;
-import com.imooc.sell.enums.ResultEnum;
-import com.imooc.sell.service.SellerInfoService;
-import com.imooc.sell.util.CookieUtil;
-import lombok.extern.slf4j.Slf4j;
+import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -16,19 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+import com.imooc.sell.config.ProjectUrlConfig;
+import com.imooc.sell.constant.CookieConstant;
+import com.imooc.sell.constant.RedisConstant;
+import com.imooc.sell.entity.SellerInfo;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.service.SellerInfoService;
+import com.imooc.sell.util.CookieUtil;
 
 /**
  * 卖家登录
  */
 @Controller
 @RequestMapping("user")
-@Slf4j
 public class LoginController {
 
     @Autowired

@@ -1,14 +1,8 @@
 package com.imooc.sell.web.controller;
 
-import com.imooc.sell.config.ProjectUrlConfig;
-import com.imooc.sell.enums.ResultEnum;
-import com.imooc.sell.exception.SellException;
-import com.imooc.sell.util.JsonUtil;
-import lombok.extern.slf4j.Slf4j;
-import me.chanjar.weixin.common.api.WxConsts;
-import me.chanjar.weixin.common.exception.WxErrorException;
-import me.chanjar.weixin.mp.api.WxMpService;
-import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,8 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import com.imooc.sell.config.ProjectUrlConfig;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.util.JsonUtil;
+
+import lombok.extern.slf4j.Slf4j;
+import me.chanjar.weixin.common.api.WxConsts;
+import me.chanjar.weixin.common.exception.WxErrorException;
+import me.chanjar.weixin.mp.api.WxMpService;
+import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
 
 @Controller
 @RequestMapping("wechat")
