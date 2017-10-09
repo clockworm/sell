@@ -1,17 +1,10 @@
 package com.imooc.sell.web.controller;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
-import com.imooc.sell.entity.ProductCategory;
-import com.imooc.sell.entity.ProductInfo;
-import com.imooc.sell.enums.CategoryStatusEnum;
-import com.imooc.sell.enums.ResultEnum;
-import com.imooc.sell.exception.SellException;
-import com.imooc.sell.service.ProductCategoryService;
-import com.imooc.sell.service.ProductInfoService;
-import com.imooc.sell.util.JsonUtil;
-import com.imooc.sell.util.KeyUtil;
-import com.imooc.sell.web.form.ProductInfoForm;
-import lombok.extern.slf4j.Slf4j;
+import java.util.List;
+import java.util.Map;
+
+import javax.validation.Valid;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +18,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.Valid;
-import java.security.Key;
-import java.util.List;
-import java.util.Map;
+import com.imooc.sell.entity.ProductCategory;
+import com.imooc.sell.entity.ProductInfo;
+import com.imooc.sell.enums.CategoryStatusEnum;
+import com.imooc.sell.enums.ResultEnum;
+import com.imooc.sell.exception.SellException;
+import com.imooc.sell.service.ProductCategoryService;
+import com.imooc.sell.service.ProductInfoService;
+import com.imooc.sell.util.JsonUtil;
+import com.imooc.sell.util.KeyUtil;
+import com.imooc.sell.web.form.ProductInfoForm;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 商品控制器
