@@ -29,6 +29,10 @@ wechat:
   mchKey: C5245D70627C1F8E9964D494B0735025
   keyPath: E:/learn/sell/weixin_cert/h5.p12
   notifyUrl: http://sell.mynatapp.cc/notify
+
+  templateId:
+    orderStatus: klBN2NXE7Mhq3EswAkXXnOR69nhU_Dod8mx6AyeNuaw
+    orderFinsh: klBN2NXE7Mhq3EswAkXXnOR69nhU_Dod8mx6AyeNuaw
 projectUrl:
   wechatMpAuthorize:  http://sell.mynatapp.cc
   wechatOpenAuthorize: http://sell.mynatapp.cc

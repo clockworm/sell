@@ -5,6 +5,8 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.imooc.sell.service.PushWechatMessageService;
+import com.imooc.sell.service.WebSocket;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -44,6 +46,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private ProductInfoService productInfoService;
+
+    @Autowired
+    private PushWechatMessageService  pushWechatMessageService;
+
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional
@@ -159,6 +167,10 @@ public class OrderServiceImpl implements OrderService {
         if (PayStatusEnum.SUCCESS.getCode().equals(orderDTO.getPayStatus())) {
 //             payService.refund(orderDTO);
         }
+        //推送微信模板消息
+        pushWechatMessageService.orderStatus(orderDTO);
+        //推送前端webSocket消息
+        webSocket.sendMessage("取消订单成功");
         return orderDTO;
     }
 
@@ -178,6 +190,10 @@ public class OrderServiceImpl implements OrderService {
             log.error("【完結訂單】 更新失敗：orderMaster={}", orderMaster);
             throw new SellException(ResultEnum.ORDER_UPDATE_ERROR);
         }
+        //推送前端webSocket消息
+        webSocket.sendMessage("完结订单成功");
+        //推送微信模板消息
+        pushWechatMessageService.orderStatus(orderDTO);
         //如果沒有支付 需要完成支付
         return orderDTO;
     }
