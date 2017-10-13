@@ -7,11 +7,11 @@ import lombok.Getter;
 /**
  * 异常信息
  */
+@Getter
 public class SellException extends RuntimeException{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Getter
 	private Integer code;
 
     public SellException(ResultEnum resultEnum) {

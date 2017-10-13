@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import javax.validation.Valid;
 
+import com.imooc.sell.exception.ResponseBankException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -42,9 +43,9 @@ public class BuyerOrderController {
 	public ResultVO<?> create(@Valid OrderForm orderForm, BindingResult bindingResult) {
 		HashMap<String, String> map = new HashMap<>();
 		if (bindingResult.hasErrors()) {
-			log.error("[創建訂單] 參數不正確,orderForm={}", orderForm);
-			throw new SellException(ResultEnum.PARAM_ERROR.getCode(),
-					bindingResult.getFieldError().getDefaultMessage());
+			log.error("[創建訂單] 參數不正確,[错误信息]:{} orderForm={}", bindingResult.getFieldError().getDefaultMessage(),orderForm);
+			throw new SellException(ResultEnum.PARAM_ERROR.getCode(),bindingResult.getFieldError().getDefaultMessage());
+//			throw new ResponseBankException(); //非200状态请求异常 头返回
 		}
 		OrderDTO dto = OrderForm2OrderDTOConverter.converter(orderForm);
 		if (dto.getDetailList().isEmpty()) {
