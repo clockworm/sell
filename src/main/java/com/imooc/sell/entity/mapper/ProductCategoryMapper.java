@@ -1,10 +1,17 @@
 package com.imooc.sell.entity.mapper;
 
-import com.imooc.sell.entity.ProductCategory;
-import org.apache.ibatis.annotations.*;
-
 import java.util.List;
 import java.util.Map;
+
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+import com.imooc.sell.entity.ProductCategory;
 
 public interface ProductCategoryMapper {
     @Insert("insert into product_category(category_name,category_type) values (#{categoryName,jdbcType=VARCHAR},#{categoryType,jdbcType=INTEGER})")

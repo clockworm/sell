@@ -1,6 +1,7 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.entity.ProductCategory;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,7 +11,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.List;
+import com.imooc.sell.entity.ProductCategory;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

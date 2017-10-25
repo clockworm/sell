@@ -1,10 +1,10 @@
 package com.imooc.sell.bean;
 
-import com.imooc.sell.config.WechatAccountConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import com.imooc.sell.config.WechatAccountConfig;
 import com.lly835.bestpay.config.WxPayH5Config;
 import com.lly835.bestpay.service.impl.BestPayServiceImpl;
 

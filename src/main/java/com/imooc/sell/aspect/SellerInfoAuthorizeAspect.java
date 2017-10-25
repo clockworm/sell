@@ -1,10 +1,8 @@
 package com.imooc.sell.aspect;
 
-import com.imooc.sell.constant.CookieConstant;
-import com.imooc.sell.constant.RedisConstant;
-import com.imooc.sell.exception.SellerAuthorizeException;
-import com.imooc.sell.util.CookieUtil;
-import lombok.extern.slf4j.Slf4j;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -15,8 +13,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
+import com.imooc.sell.constant.CookieConstant;
+import com.imooc.sell.constant.RedisConstant;
+import com.imooc.sell.exception.SellerAuthorizeException;
+import com.imooc.sell.util.CookieUtil;
+
+import lombok.extern.slf4j.Slf4j;
 /**
  * AOP登录效验
  */

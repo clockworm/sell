@@ -1,16 +1,19 @@
 package com.imooc.sell.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.imooc.sell.enums.CategoryStatusEnum;
-import com.imooc.sell.util.EnumUtil;
-import lombok.Data;
-import org.hibernate.annotations.DynamicUpdate;
+import java.math.BigDecimal;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.math.BigDecimal;
-import java.sql.Date;
+
+import org.hibernate.annotations.DynamicUpdate;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.imooc.sell.enums.CategoryStatusEnum;
+import com.imooc.sell.util.EnumUtil;
+
+import lombok.Data;
 
 /**
  * 商品

@@ -1,8 +1,9 @@
 package com.imooc.sell.web.form;
 
-import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.Range;
+
+import lombok.Data;
 
 @Data
 public class ProductCategoryForm {

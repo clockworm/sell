@@ -1,16 +1,18 @@
 package com.imooc.sell.service;
 
-import lombok.extern.slf4j.Slf4j;
-import lombok.val;
-import org.springframework.stereotype.Component;
+import java.io.IOException;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
-import java.util.concurrent.CopyOnWriteArraySet;
+
+import org.springframework.stereotype.Component;
+
+import lombok.val;
+import lombok.extern.slf4j.Slf4j;
 
 @Component
 @ServerEndpoint("/webSocket")

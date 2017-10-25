@@ -1,13 +1,14 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.dto.OrderDTO;
+import java.math.BigDecimal;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigDecimal;
+import com.imooc.sell.dto.OrderDTO;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

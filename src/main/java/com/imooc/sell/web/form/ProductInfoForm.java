@@ -1,11 +1,13 @@
 package com.imooc.sell.web.form;
 
-import com.imooc.sell.enums.CategoryStatusEnum;
-import lombok.Data;
-import lombok.ToString;
+import java.math.BigDecimal;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
-import java.math.BigDecimal;
+import com.imooc.sell.enums.CategoryStatusEnum;
+
+import lombok.Data;
+import lombok.ToString;
 
 /**
  * 商品

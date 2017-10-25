@@ -1,7 +1,10 @@
 package com.imooc.sell.service;
 
-import com.imooc.sell.entity.ProductInfo;
-import com.imooc.sell.enums.CategoryStatusEnum;
+import static org.junit.Assert.assertNotEquals;
+
+import java.math.BigDecimal;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,10 +14,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.math.BigDecimal;
-import java.util.List;
-
-import static org.junit.Assert.assertNotEquals;
+import com.imooc.sell.entity.ProductInfo;
+import com.imooc.sell.enums.CategoryStatusEnum;
 
 
 @RunWith(SpringRunner.class)
